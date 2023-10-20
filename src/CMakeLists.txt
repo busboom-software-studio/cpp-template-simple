@@ -17,12 +17,11 @@ add_executable(${PROJECT_NAME} main.cpp)
 add_sanitizers(${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${LIB_NAME})
 
-if (MSVC)
-  target_compile_options(${LIB_NAME} PRIVATE "/IW4")
-  target_compile_options(${LIB_NAME} PRIVATE "/WX")
-else()
-  target_compile_options(${LIB_NAME} PRIVATE "-Wall")
-  target_compile_options(${LIB_NAME} PRIVATE "-Wextra")
-  target_compile_options(${LIB_NAME} PRIVATE "-Werror")
-  target_compile_options(${LIB_NAME} PRIVATE "-pedantic")
-endif()
+
+target_compile_options(${LIB_NAME} PRIVATE "-Wall")
+target_compile_options(${LIB_NAME} PRIVATE "-Wextra")
+target_compile_options(${LIB_NAME} PRIVATE "-Werror")
+target_compile_options(${LIB_NAME} PRIVATE "-pedantic")
+
+
+add_custom_target(test COMMAND ${CMAKE_CTEST_COMMAND} DEPENDS ${PROJECT_NAME})

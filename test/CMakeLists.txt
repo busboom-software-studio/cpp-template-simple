@@ -32,7 +32,9 @@ target_compile_options(${TEST_NAME} PRIVATE "-Werror")
 target_compile_options(${TEST_NAME} PRIVATE "-pedantic")
 
 
-add_custom_target(test COMMAND ${CMAKE_CTEST_COMMAND} DEPENDS ${PROJECT_NAME})
+add_custom_target(test 
+  COMMAND ${CMAKE_CTEST_COMMAND} --build-target all -V --output-on-failure
+  DEPENDS ${PROJECT_NAME})
 
 enable_testing()
 
@@ -40,4 +42,13 @@ enable_testing()
 catch_discover_tests(${TEST_NAME})
 
 # Add additional tests, which can use external scripts, alternate arguments, etc
-add_test(NAME MyAwesomeTest COMMAND ${TEST_NAME})
+add_test(NAME ExtraTest COMMAND ${TEST_NAME})
+
+
+# Run the test program, with a dependency on building it. 
+add_custom_target(build_test 
+    COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${TEST_NAME} 
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    DEPENDS ${PROJECT_NAME}
+    COMMENT "Build and test"
+)

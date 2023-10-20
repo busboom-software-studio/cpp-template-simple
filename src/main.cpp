@@ -1,3 +1,3 @@
 #include "hello.h"
 
-int main() { hello("CMake"); }
+int main() { hello("CMaker"); }

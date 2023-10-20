@@ -14,7 +14,11 @@ add_subdirectory(thirdparty/catch)
 add_subdirectory(src)
 add_subdirectory(test)
 
-
 # Add the target 'make run' to build and run the tests
-add_custom_target(run COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${PROJECT_NAME} DEPENDS ${PROJECT_NAME})
+add_custom_target(run 
+    COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${PROJECT_NAME} 
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    DEPENDS ${PROJECT_NAME}
+    COMMENT "Running main program"
+)
 

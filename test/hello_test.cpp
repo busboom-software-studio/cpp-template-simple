@@ -1,11 +1,11 @@
-#include "catch.hpp"
+#include <catch2/catch_test_macros.hpp>
 
 #include "hello.h"
 #include <iostream>
 
 #include <sstream>
 
-TEST_CASE("hello says hello")
+TEST_CASE("test_1")
 {
   std::ostringstream out;
   std::streambuf* coutbuf = std::cout.rdbuf();
@@ -16,4 +16,10 @@ TEST_CASE("hello says hello")
   std::cout.rdbuf(coutbuf);
 
   REQUIRE(out.str() == "Hello, tester!\nHello, you!\n");
+}
+
+TEST_CASE("test_2")
+{
+  
+  REQUIRE(true==true);
 }

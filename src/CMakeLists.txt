@@ -24,4 +24,3 @@ target_compile_options(${LIB_NAME} PRIVATE "-Werror")
 target_compile_options(${LIB_NAME} PRIVATE "-pedantic")
 
 
-add_custom_target(test COMMAND ${CMAKE_CTEST_COMMAND} DEPENDS ${PROJECT_NAME})

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 find_package(Catch2 3 REQUIRED)
-include(CTest)
+
 include(Catch)
 
 # Add all of the source files for your tests

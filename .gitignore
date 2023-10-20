@@ -8,4 +8,15 @@ CMakeCache.txt
 CMakeFiles
 Makefile
 cmake_install.cmake
-src/*.a
+
+build/*
+! build/.keep
+bin/*
+! bin/.keep
+lib/*
+! lib/.keep
+
+test/CTestTestfile.cmake
+test/*.cmake
+test/Testing
+

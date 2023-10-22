@@ -28,3 +28,5 @@ test/*.cmake
 test/Testing
 
 DartConfiguration.tcl
+
+cmake-build-debug

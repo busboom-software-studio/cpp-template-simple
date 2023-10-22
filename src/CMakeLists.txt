@@ -10,50 +10,33 @@
 set(EXEC_NAME p2)
 add_executable(${EXEC_NAME} problem2.cpp)
 # These compile options make the compiler add extra warnings and treat warnings as errors
-target_compile_options(${EXEC_NAME} PRIVATE "-Wall -Wextra -Werror -pedantic")
+target_compile_options(${EXEC_NAME} PRIVATE "-Wall")
+target_compile_options(${EXEC_NAME} PRIVATE "-Wextra")
+target_compile_options(${EXEC_NAME} PRIVATE "-Werror")
+target_compile_options(${EXEC_NAME} PRIVATE "-pedantic")
 
 ## End Executable
 
 ##
-## Add an Executable
-## This is an example of a complex executable that links to libraries and
-## has a lot of compile options
+## Add an Executable with multiple sources and compile options
 ##
 
 # Set the name and the source files for the executable
 set(EXEC_NAME p5)
-add_executable(${EXEC_NAME} problem5.cpp)
-
-# Link the executable with the library, so all of the sources from $SOURCES
-# are linked to the executable file with main in it()
-target_link_libraries(${EXEC_NAME} PRIVATE libtreasure)
-# Add the include directory, so that the sources from $SOURCES can include without specifying the path
-target_include_directories(${EXEC_NAME} PRIVATE ${INCLUDE_DIR} ${LIB_SRC_DIR})
+add_executable(${EXEC_NAME} problem5.cpp treasure.cpp treasure.h)
 
 # These compile options make the compiler add extra warnings and treat warnings as errors
-target_compile_options(${EXEC_NAME} PRIVATE "-Wall -Wextra -Werror -pedantic")
+target_compile_options(${EXEC_NAME} PRIVATE "-Wall")
+target_compile_options(${EXEC_NAME} PRIVATE "-Wextra")
+target_compile_options(${EXEC_NAME} PRIVATE "-Werror")
+target_compile_options(${EXEC_NAME} PRIVATE "-pedantic")
 
 # These options turn off specific warnings, because the instructor's have requirements that
 # require using variable length arrays (vla) and unused parameters. YOu should generally not
 # have these in a project, unless they are absolutely necessary
-target_compile_options(${EXEC_NAME} PRIVATE "-Wno-vla -Wno-unused-parameter")
+target_compile_options(${EXEC_NAME} PRIVATE "-Wno-vla") # Disable variable length array warning, int foobar[SIZE]
+target_compile_options(${EXEC_NAME} PRIVATE "-Wno-unused-parameter") # The instructors required a func def with unused params.
+
 
 ## End executable
-
-
-
-##
-## CMake Targets
-##
-
-# Add the target 'make run_${EXEC_NAME}' to build and run the tests
-add_custom_target(run_${EXEC_NAME}
-        COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${EXEC_NAME}
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-        DEPENDS ${EXEC_NAME}iha
-        COMMENT "Running main program"
-        )
-
-# Set  compiler options
-
 

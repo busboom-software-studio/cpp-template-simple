@@ -6,13 +6,13 @@ include(Catch)
 
 # Add all of the source files for your tests
 set(SOURCES
-  "hello_test.cpp"
+  "treasure_tests.cpp"
 )
 
 
 set(LIB_NAME ${PROJECT_NAME}_lib)
 
-# This wil be the name of the test progra,
+# This wil be the name of the test program,
 set(TEST_NAME ${PROJECT_NAME}_test)
 
 find_package(Sanitizers)
@@ -24,12 +24,6 @@ add_executable(${TEST_NAME} test_main.cpp ${SOURCES})
 
 target_link_libraries(${TEST_NAME} PRIVATE ${LIB_NAME} Catch2::Catch2WithMain)
 target_compile_definitions(${TEST_NAME} PRIVATE CATCH_CONFIG_CONSOLE_WIDTH=60)
-
-
-target_compile_options(${TEST_NAME} PRIVATE "-Wall")
-target_compile_options(${TEST_NAME} PRIVATE "-Wextra")
-target_compile_options(${TEST_NAME} PRIVATE "-Werror")
-target_compile_options(${TEST_NAME} PRIVATE "-pedantic")
 
 
 add_custom_target(test 
@@ -52,3 +46,9 @@ add_custom_target(build_test
     DEPENDS ${PROJECT_NAME}
     COMMENT "Build and test"
 )
+
+target_compile_options(${TEST_NAME} PRIVATE "-Wno-vla") # Disable variable length array warning, int foobar[SIZE]
+target_compile_options(${TEST_NAME} PRIVATE "-Wall")
+target_compile_options(${TEST_NAME} PRIVATE "-Wextra")
+target_compile_options(${TEST_NAME} PRIVATE "-Werror")
+target_compile_options(${TEST_NAME} PRIVATE "-pedantic")

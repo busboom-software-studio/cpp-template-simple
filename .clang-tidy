@@ -23,13 +23,12 @@ Checks: >
   -cppcoreguidelines-avoid-c-arrays,
   -hicpp-avoid-c-arrays,
   -modernize-avoid-c-arrays,
-  -llvm-qualified-auto,
+#  -llvm-qualified-auto,
   -readability-qualified-auto,
   -cppcoreguidelines-pro-bounds-pointer-arithmetic
 WarningsAsErrors: '*'
 HeaderFilterRegex: 'src/.*'
 AnalyzeTemporaryDtors: false
-User:            josh
 CheckOptions:
   - key:             cert-err61-cpp.CheckThrowTemporaries
     value:           '1'

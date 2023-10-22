@@ -21,8 +21,7 @@ build/*
 ! build/.keep
 bin/*
 ! bin/.keep
-lib/*
-! lib/.keep
+
 
 test/CTestTestfile.cmake
 test/*.cmake

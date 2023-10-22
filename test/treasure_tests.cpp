@@ -1,6 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 
-#include "treasure.h"
+#include "../lib/treasure.h"
 #include <iostream>
 
 #include <iomanip>

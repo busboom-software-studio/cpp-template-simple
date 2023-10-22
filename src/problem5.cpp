@@ -1,11 +1,8 @@
-// CSCI 1300 Fall 2023
-// Author: Max Busboom
-// TA: Aditya
-// Question 5b
+
+#include "../lib/treasure.h"
 #include <cmath>
-#include <iostream>
 #include <iomanip>
-#include "treasure.h"
+#include <iostream>
 
 using namespace std;
 

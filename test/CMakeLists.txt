@@ -7,17 +7,15 @@ set(SOURCES
   "treasure_tests.cpp"
 )
 
-set(LIB_NAME ${PROJECT_NAME}_lib)
-
 # This wil be the name of the test program,
 set(TEST_NAME ${PROJECT_NAME}_test)
 
 
-# Reference the file that hods main() for tjhe test system
+# Reference the file that hods main() for the test system
 add_executable(${TEST_NAME} test_main.cpp ${SOURCES})
 
 
-target_link_libraries(${TEST_NAME} PRIVATE ${LIB_NAME} Catch2::Catch2WithMain)
+target_link_libraries(${TEST_NAME} PRIVATE libtreasure Catch2::Catch2WithMain)
 target_compile_definitions(${TEST_NAME} PRIVATE )
 
 
@@ -55,7 +53,7 @@ add_custom_target(build_test
 )
 
 target_compile_options(${TEST_NAME} PRIVATE "-Wno-vla") # Disable variable length array warning, int foobar[SIZE]
-target_compile_options(${LIB_NAME} PRIVATE "-Wno-unused-parameter") # The instructors required a func def with unused params.
+target_compile_options(${TEST_NAME} PRIVATE "-Wno-unused-parameter") # The instructors required a func def with unused params.
 
 target_compile_options(${TEST_NAME} PRIVATE "-Wall")
 target_compile_options(${TEST_NAME} PRIVATE "-Wextra")

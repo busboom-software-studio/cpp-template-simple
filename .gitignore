@@ -17,8 +17,7 @@ CMakeFiles
 Makefile
 cmake_install.cmake
 
-build/*
-! build/.keep
+
 bin/*
 ! bin/.keep
 

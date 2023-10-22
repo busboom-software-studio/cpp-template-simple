@@ -1,0 +1,73 @@
+# C++ Project Template
+
+This Github repository is a template for C++ projects. *DO NOT FORK THIS
+REPOSITORY*. You should use the 'Use this template' button to create a new
+repository for your project, making a copy of it in your own Github account.
+After instantiating the template, you should clone your new repository to your
+local machine and start working on your project.
+
+( However, if you are going to use Githubs online code editor, Github Code spaces, you should first create the code space, and don't clone to your local machine, then perform the setup steps below )
+
+# Project Setup 
+
+( Do this once ) 
+
+If you are using this template for a homework project, *you should create a new
+repository for each homework assignment.* You should not use the same
+repository for multiple assignments, and name the repository after the
+assignment. For example, if you are working on homework 1, you should create a
+new repository called `hw1` and instantiate this template in that repository.
+If you are working on homework 2, you should create a new repository called
+`hw2`.
+
+After cloning the template, rename the project to the same name. Edit the root
+`CMakeLists.txt`, seting the name in the in line ``project(<proj_name> CXX)``
+
+## Adding Executables 
+
+( Do this for each homework problem that has a seperate main() )
+
+For most projects, your source projects will go in the ``src/`` directory. To
+add a source file that will be executable, you will do two things. 
+
+1. Add the ``.cpp`` file to the ``src/`` directory
+2. Add a block for the executable in ``src/CMakeLists.txt``
+
+To create the executable block, you can edit or copy the block that runs from
+``Add An Executable`` to ``End Executable``. You will need to edit the name of
+the program that will be gnerated from the source on the ``set(EXEC_NAME) ``
+line, then add all of the source files ( usually only one ) on the
+``add_executable`` line. 
+
+If you need to add another executable, just copy the entire block and edit the
+two lines. 
+
+# IDE Setup
+
+There are a few things to do to get your IDE working. 
+
+## Git Hub Code Spaces
+
+After you've cloned the template, you may be able to run your project in Github's online version of Visual Studio Code, called Github Code Spaces. Click on the gree "<> Code" button, and if you see a 'Codespaces tab', click on it to open the repo in Code spaces. Click the green button "Create codespace on master". Then follow the instructions for Visual Studio Code.
+
+*If you use codes spaces, be sure to commit your changes before you finish a session, using the branching git icon on the left side menu bar. * 
+
+
+## Visual Studio Code
+
+### Install Extensions
+
+You should install these extensions, by clicking on the puxzzle-blocks icon on the left menu bar:
+
+* C/C++ Extension Pack, from Microsoft. (ms-vscode.cpptools-extension-pack)
+* CMake tools, from Microsoft (ms-vscode.cmake-tools)
+
+If you install those two extensions, VSCode will also install their dependencies, and you will end up with 5 additional extensions. 
+
+
+## Acknowledgements
+
+This template, editied by Eric Busboom, is based on [ccp-template]
+(https://github.com/joshpeterson/cpp-template) by Josh Peterson. Josh's
+cpp-template is based on the [Hello CMake]
+(https://github.com/arnemertz/hello_cmake) project from Arne Mertz.

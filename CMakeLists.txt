@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
 
-project(hw5 CXX)
+project(hw5 CXX) # CHANE THE PROJECT NAME HERE
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 

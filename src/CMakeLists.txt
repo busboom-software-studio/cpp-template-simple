@@ -9,3 +9,11 @@ target_link_libraries(${EXEC_NAME} PRIVATE libtreasure)
 # Add the include directory, so that the sources from $SOURCES can include without specifying the path
 target_include_directories(${EXEC_NAME} PRIVATE ${INCLUDE_DIR} ${LIB_SRC_DIR})
 
+# Add the target 'make run' to build and run the tests
+add_custom_target(run_${EXEC_NAME}
+        COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${EXEC_NAME}
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+        DEPENDS ${EXEC_NAME}iha
+        COMMENT "Running main program"
+        )
+

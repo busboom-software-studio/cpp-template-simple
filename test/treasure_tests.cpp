@@ -93,3 +93,8 @@ TEST_CASE("sample_run_3") {
 
 }
 
+TEST_CASE("one_is_one") {
+
+  REQUIRE(1 == 1);
+
+}

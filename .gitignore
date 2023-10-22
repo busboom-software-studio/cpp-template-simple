@@ -28,3 +28,4 @@ test/CTestTestfile.cmake
 test/*.cmake
 test/Testing
 
+DartConfiguration.tcl

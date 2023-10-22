@@ -27,12 +27,12 @@ enable_testing() # alternate of include(CTest)
 add_test(NAME ExtraTest COMMAND ${TEST_NAME})
 
 # Run the test program, with a dependency on building it.
-add_custom_target(TestOneIsOne
-        COMMAND ${CMAKE_CTEST_COMMAND} --build-target hw5_test -V --output-on-failure -R one_is_one
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-        DEPENDS ${PROJECT_NAME}
-        COMMENT "Build and test"
-        )
+#add_custom_target(TestOneIsOne
+#        COMMAND ${CMAKE_CTEST_COMMAND} --build-target hw5_test -V --output-on-failure -R one_is_one
+#        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+#        DEPENDS ${PROJECT_NAME}
+#        COMMENT "Build and test"
+#        )
 
 
 

@@ -3,7 +3,7 @@
 
 set(LIB_NAME libtreasure) # The library will be compiled to bin/${LIB_NAME}.a
 
-add_library(${LIB_NAME} STATIC # STATIC, make a  .a, not a .so
+add_library(${LIB_NAME} STATIC # STATIC, make an  .a, not a .so
         treasure.cpp
         treasure.h
         )

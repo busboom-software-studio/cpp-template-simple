@@ -15,7 +15,7 @@ struct ft_result runFindTreasure(double clue[][2], double region[][2],
 
   calculateDistanceMatrix(distance, clue, region, CLUE_ROWS, CLUE_COLS,
                           REG_ROWS, REG_COLS);
-  
+
   for (int i = 0; i < CLUE_ROWS; i++)
   {
     for (int j = 0; j < REG_ROWS; j++)

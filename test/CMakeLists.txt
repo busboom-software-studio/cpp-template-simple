@@ -55,6 +55,8 @@ add_custom_target(build_test
 )
 
 target_compile_options(${TEST_NAME} PRIVATE "-Wno-vla") # Disable variable length array warning, int foobar[SIZE]
+target_compile_options(${LIB_NAME} PRIVATE "-Wno-unused-parameter") # The instructors required a func def with unused params.
+
 target_compile_options(${TEST_NAME} PRIVATE "-Wall")
 target_compile_options(${TEST_NAME} PRIVATE "-Wextra")
 target_compile_options(${TEST_NAME} PRIVATE "-Werror")

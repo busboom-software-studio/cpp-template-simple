@@ -4,11 +4,6 @@
 
 using namespace std;
 
-#pragma clang diagnostic push
-
-// THe instructors defined the function decls, but some of them aren't used in these implementations.
-#pragma clang diagnostic ignored "-Wunused-parameter"
-
 
 void calculateDistanceMatrix(double distance[][3], double clue[][2], double region[][2],
                              int CLUE_ROWS, int CLUE_COLS, int REG_ROWS, int REG_COLS){
@@ -82,6 +77,3 @@ void findTreasure(int clue_regions[], double region[][2], int CLUE_REGIONS_SIZE,
        << setprecision(2) << r.x << ", " << r.y << " )" << endl;
 }
 
-
-
-#pragma clang diagnostic pop

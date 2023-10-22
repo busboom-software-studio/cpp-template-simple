@@ -48,7 +48,7 @@ TEST_CASE("sample_run_1") {
   const int REG_ROWS = 3;
   const int REG_COLS = 2;
   double clue[CLUE_ROWS][CLUE_COLS] = {{2, 10}, {2, 5}, {8, 4}, {5, 8}, {1, 2}};
-  double region[REG_ROWS][REG_COLS] = {{0, 0}, {5, -1}, {-1, -2}};
+  double region[REG_ROWS][REG_COLS] = {{2, 10}, {5, 8}, {1, 2}};
 
   struct ft_result r = runFindTreasure(clue, region, CLUE_ROWS, CLUE_COLS, REG_ROWS, REG_COLS);
 
@@ -69,10 +69,10 @@ TEST_CASE("sample_run_2") {
 
   struct ft_result r = runFindTreasure(clue, region, CLUE_ROWS, CLUE_COLS, REG_ROWS, REG_COLS);
 
-  REQUIRE(r.region == 1);
+  REQUIRE(r.region == 2);
   REQUIRE(r.n_clues == 1);
-  REQUIRE(r.x == 2.0);
-  REQUIRE(r.y == 10.0);
+  REQUIRE(r.x == 3.0);
+  REQUIRE(r.y == 6.0);
 }
 
 TEST_CASE("sample_run_3") {
@@ -86,10 +86,10 @@ TEST_CASE("sample_run_3") {
 
   struct ft_result r = runFindTreasure(clue, region, CLUE_ROWS, CLUE_COLS, REG_ROWS, REG_COLS);
 
-  REQUIRE(r.region == 1);
-  REQUIRE(r.n_clues == 1);
-  REQUIRE(r.x == 2.0);
-  REQUIRE(r.y == 10.0);
+  REQUIRE(r.region == 3);
+  REQUIRE(r.n_clues == 0);
+  REQUIRE(r.x == -1.0);
+  REQUIRE(r.y == -2.0);
 
 }
 

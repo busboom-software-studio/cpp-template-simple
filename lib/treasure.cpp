@@ -43,18 +43,20 @@ struct ft_result _findTreasure(int clue_regions[], double region[][2],
 
   int region_count[REG_ROWS];
 
+  // Initialize region count to 0
   for(int i = 0; i<REG_ROWS;i++){
     region_count[i] = 0;
   }
 
+  // Count the number of clues in each region
   for(int i = 0; i<CLUE_REGIONS_SIZE;i++){
     region_count[clue_regions[i]-1]+=1;
   }
 
-
   int min_reg_count=region_count[0];
   int min_reg = 0;
 
+  // Find the region with the least number of clues
   for(int i=0;i<REG_ROWS;i++){
     if(region_count[i]<min_reg_count){
       min_reg_count = region_count[i];

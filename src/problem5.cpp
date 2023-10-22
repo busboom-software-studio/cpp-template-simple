@@ -1,11 +1,10 @@
 
-#include "../lib/treasure.h"
+#include "treasure.h"
 #include <cmath>
 #include <iomanip>
 #include <iostream>
 
 using namespace std;
-
 
 int main(){
     const int CLUE_ROWS = 5;
@@ -23,7 +22,6 @@ int main(){
     for(int i = 0; i<CLUE_ROWS;i++){
         for(int j=0;j<REG_ROWS;j++){
             cout <<fixed<<setprecision(3)<< distance[i][j]<<" ";
-            
         }
         cout <<endl;
     }
@@ -34,7 +32,7 @@ int main(){
         cout << clue_regions[i]<<" ";
    }
    cout << endl;
-    
+
    findTreasure(clue_regions,region,CLUE_ROWS,REG_ROWS,REG_COLS);
 }
 

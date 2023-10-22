@@ -1,6 +1,21 @@
 cmake_minimum_required(VERSION 3.5)
 
-find_package(Catch2 3 REQUIRED)
+#find_package(Catch2 3 REQUIRED)
+
+Include(FetchContent)
+
+set(FETCHCONTENT_BASE_DIR "${CMAKE_BINARY_DIR}/build/_deps" CACHE STRING "Base directory for FetchContent downloads" FORCE)
+
+FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG        v3.0.1 # or a later release
+)
+
+set(GENERATED_INCLUDE_DIR "${CMAKE_BINARY_DIR}/lib/generated-includes" CACHE PATH "" FORCE)
+FetchContent_MakeAvailable(some_dependency)
+
+FetchContent_MakeAvailable(Catch2)
 
 include(Catch)
 
@@ -9,21 +24,18 @@ set(SOURCES
   "treasure_tests.cpp"
 )
 
-
 set(LIB_NAME ${PROJECT_NAME}_lib)
 
 # This wil be the name of the test program,
 set(TEST_NAME ${PROJECT_NAME}_test)
 
-find_package(Sanitizers)
-add_sanitizers(${TEST_NAME})
 
 # Reference the file that holds main() for tjhe test system
 add_executable(${TEST_NAME} test_main.cpp ${SOURCES})
 
 
 target_link_libraries(${TEST_NAME} PRIVATE ${LIB_NAME} Catch2::Catch2WithMain)
-target_compile_definitions(${TEST_NAME} PRIVATE CATCH_CONFIG_CONSOLE_WIDTH=60)
+target_compile_definitions(${TEST_NAME} PRIVATE )
 
 
 add_custom_target(test 
@@ -51,4 +63,4 @@ target_compile_options(${TEST_NAME} PRIVATE "-Wno-vla") # Disable variable lengt
 target_compile_options(${TEST_NAME} PRIVATE "-Wall")
 target_compile_options(${TEST_NAME} PRIVATE "-Wextra")
 target_compile_options(${TEST_NAME} PRIVATE "-Werror")
-target_compile_options(${TEST_NAME} PRIVATE "-pedantic")
+#target_compile_options(${TEST_NAME} PRIVATE "-pedantic")

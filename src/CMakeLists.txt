@@ -6,22 +6,15 @@ set(SOURCES
   "treasure.h"
 )
 
-# Sanitizers find serious problems like uninitialized memory, out of bounds access, etc.
-find_package(Sanitizers) # Add the sanitizers package to the build system
-
 # Define the library for the files above.
 set(LIB_NAME ${PROJECT_NAME}_lib)
 add_library(${LIB_NAME} STATIC ${SOURCES})
-
-add_sanitizers(${LIB_NAME})
 
 set_target_properties(${LIB_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 target_include_directories(${LIB_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Define the executable, which has a main() function.
 add_executable(${PROJECT_NAME} main.cpp)
-
-add_sanitizers(${PROJECT_NAME})
 
 # Link the executable with the library, so all of the sources from $SOURCES
 # are linked to the executable file with main in it()

@@ -1,7 +1,5 @@
 # Main program source files and executables
 
-
-
 ##
 ## Add a simple executable
 ###
@@ -9,7 +7,9 @@
 # Set the name and the source files for the executable
 set(EXEC_NAME p2)
 add_executable(${EXEC_NAME} problem2.cpp)
+
 # These compile options make the compiler add extra warnings and treat warnings as errors
+# The are optional, but will help you write better code
 target_compile_options(${EXEC_NAME} PRIVATE "-Wall")
 target_compile_options(${EXEC_NAME} PRIVATE "-Wextra")
 target_compile_options(${EXEC_NAME} PRIVATE "-Werror")

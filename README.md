@@ -4,47 +4,53 @@ This Github repository is a template for C++ projects. *DO NOT FORK THIS
 REPOSITORY*. You should use the 'Use this template' button to create a new
 repository for your project, making a copy of it in your own Github account.
 After instantiatinœg the template, you should clone your new repository to your
-local machine and start working on your project, or use an online code editor like Github Codespaces that can work with the git repository directly. 
+local machine and start working on your project, or use an online code editor 
+like Github Codespaces that can work with the git repository directly. 
 
 
 # IDE Setup
 
 There are a few things to do to get your IDE working and start your project 
 
-## Git Hub Codespaces 
-
-After you've used the template, you may be able to run your project in
-Github's online version of Visual Studio Code, called Github Code Spaces. Click
-on the green "<> Code" button, and if you see a 'Codespaces tab', click on it to
-open the repo in Code spaces. Click the green button "Create codespace on
-master".
-
-You probably also want to turn on preference syncing. Click on the person icon
-in the lower left.
-
-*If you use codes spaces, be sure to commit your changes before you finish a
-session, using the branching git icon on the left side menu bar. * If you
-abandon the editor without committing your changes you will lose them.
-
-
-### Install Extensions
-
-You should install this extension, by clicking on the puzzle-blocks icon on the left menu bar:
-
-* C/C++ Extension Pack, from Microsoft. (ms-vscode.cpptools-extension-pack)
-
-If you install this extension VSCode will also install its
-dependencies, and you will end up with 5 additional extensions. Note that this is not the Microsoft "C/C++" extention
-
-### Select a Kit
-
-On the bottom button bar, you will see "No Kit Selected". Click that and select
-a compiler. GCC is a good choice, but you can also install Clang
 
 ## Visual Studio Code
 
-If you are using an IDE on your computer, you need to clone the repository to
-your local machine. Then, open that directory in Visual Studio Code. 
+### Install Programs
+
+You will need to install three programs
+
+* [Visual Studio Code](https://code.visualstudio.com/download)
+
+For Windows:
+* [Build Tools For Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022) 
+* [Git](https://git-scm.com/downloads)
+
+On Windows, the Build Tools For Visual Studio should also install CMake, but you may have
+ to install [CMake](https://cmake.org/download/) directly.
+
+
+For Mac:
+* [XCode](https://developer.apple.com/support/xcode/)
+* [CMake](https://cmake.org/download/)
+* [Git](https://git-scm.com/downloads)
+
+For Macs, you can also install these tools by:
+
+* [Install Homebrew](https://docs.brew.sh/Installation)
+* brew install gcc
+* brew install cmake
+* brew install git
+
+
+### Use the Template, then Clone the Repo
+
+From this repo, click the green 'Use This Template' button to create a new repo. 
+The, in the new repo, you should have a green "<> Code" button. Click that, and
+on the "Local" tab, copy the HTTPS url. 
+
+Open Visual Studio Code, and in the startup window, you should see, under the
+"Start" heading, "Clone Git Repository ...". Click that link, then at the top 
+of the Visual Studio window, enter the Repo url in the text field. 
 
 ### Install Extensions
 
@@ -56,10 +62,25 @@ If you install this extension VSCode will also install its dependencies, and
 you will end up with 5 additional extensions. Note that this is not the
 Microsoft "C/C++" extention
 
+### Other Configuration
+
+You might get a pop up window asking you to set the CMake menu bar visibility. Set it 
+to Visible.  If you don't get the popup, click on the Cmake Icon in the left side 
+menu bar, the triangle with the wrench. Then click on the gear icon in the CMake panel. 
+You should see a new file table labled "Settings", with a text box at the top with 
+"@ext:ms-vscode.cmake-tools" in it. Add "Visibility" to it so it reads 
+"@ext:ms-vscode.cmake-tools visibility", then set the visibility feature to "visible". 
+
+You can also go into the file `.vscode/settings.json` and add the entry:
+
+     "cmake.options.statusBarVisibility": "visible",
+
 ### Select a Kit
 
 On the bottom button bar, you will see "No Kit Selected". Click that and select
 a compiler. GCC is a good choice, but you can also install Clang
+
+
 
 # Building and Running
 
@@ -74,8 +95,8 @@ top of the screen ) options to check what will get built. The important targets
 are: 
 
 * all. Build everything
-* p5 The executable for problem 5. The code for this is in `src/problem5.cpp'
-* hw5_test. A test program. The code for this is in `test/treasure_tests.cpp'
+* p5 The executable for problem 5. The code for this is in `src/problem5.cpp`
+* hw5_test. A test program. The code for this is in `test/treasure_tests.cpp`
 
 
 Also at the bottom of the screen are the run buttons, A bug, and a play button.

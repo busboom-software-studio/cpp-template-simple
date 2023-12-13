@@ -17,24 +17,24 @@ There are a few things to do to get your IDE working and start your project
 
 ### Install Programs
 
-You will need to install three programs
+You will need to install four programs, an dIDE, Visual Studio Code, a compiler, CMake and Git.
 
-* [Visual Studio Code](https://code.visualstudio.com/download)
+#### Windows
 
-For Windows:
-* [Build Tools For Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022) 
+* IDE: [Visual Studio Code](https://code.visualstudio.com/download)
+* Compiler: [Build Tools For Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022) 
 * [Git](https://git-scm.com/downloads)
+* [CMake](https://cmake.org/download/) . The Build Tools For Visual Studio should install CMake, but you may have
+ to install directly.
 
-On Windows, the Build Tools For Visual Studio should also install CMake, but you may have
- to install [CMake](https://cmake.org/download/) directly.
+#### Mac
 
-
-For Mac:
-* [XCode](https://developer.apple.com/support/xcode/)
+* IDE: [Visual Studio Code](https://code.visualstudio.com/download)
+* Compiler: [XCode](https://developer.apple.com/support/xcode/)
 * [CMake](https://cmake.org/download/)
 * [Git](https://git-scm.com/downloads)
 
-For Macs, you can also install these tools by:
+For Macs, you can also install all of these tools except XCode and VSCode with Homebrew:
 
 * [Install Homebrew](https://docs.brew.sh/Installation)
 * brew install gcc
